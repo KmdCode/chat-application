@@ -64,7 +64,7 @@ form input[type="text"], form input[type="password"]{
     outline: none;
 }
 
-#submit {
+button {
     background-color: var(--trim-color);
     color: white;
     font-weight: bold;
