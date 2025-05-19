@@ -38,23 +38,30 @@
 #right #buttons{
     margin-left: 5rem;
     gap: 2rem;
+    display: flex;
 }
 
-#right button {
+#right a {
+    display: inline-block;
+    text-align: center;
+    line-height: 2rem;
+    text-decoration: none;
+    font-weight: 600;
     width:10rem;
     height: 2rem; 
+    border-radius: 0.2rem;
+    padding: 0;
+    text-decoration: none;
+    color: black;
 }
 
 #right #login {
     background-color: var(--trim-color);
-    border: none;
-    border-radius: 0.2rem;
     margin-right: 2rem;
 }
 
 #right #signup {
     background-color: var(--heading-color);
-    border: none;
     border-radius: 0.2rem;
 }
 
