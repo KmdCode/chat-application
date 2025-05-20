@@ -75,5 +75,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.loadChat = loadChat;
 
+    window.addEventListener('storage', (event) => {
+    if (event.key === 'friendsConnect') {
+        const updatedAppData = JSON.parse(event.newValue) || { users: [] };
+        
+        const newCurrentUser = updatedAppData.users.find(user => user.username === currentUser.username);
+        if (!newCurrentUser) return;
+
+        // Update the global user and app data
+        window.currentUser = newCurrentUser;
+        window.appData = updatedAppData;
+
+        // Check if a chat is open and reload it
+        const receiverUsername = document.querySelector('#chat-input input')?.dataset.with;
+        if (receiverUsername) {
+        loadChat(receiverUsername);
+        }
+    }
+    });
 
 });
