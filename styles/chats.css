@@ -14,7 +14,7 @@ html{
 
 #banner{
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 35% 65%;
     grid-template-rows: 100vh;
 
 }
@@ -27,12 +27,30 @@ html{
 
 #left {
     background-color: var(--primary-color);
-    
 }
 
 #left h1, #left h2 {
     color: var(--heading-color);
     margin-left: 1.5rem;
+}
+
+.tab-bar {
+    display: flex;
+    gap: 1rem;
+    margin: 1.2rem 1.5rem 0 1.5rem;
+}
+
+.tab {
+    flex: 1;
+    background-color: var(--trim-color);
+    color: var(--heading-color);
+    border: 2px solid var(--trim-color);
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-family: "Mulish", sans-serif;
 }
 
 #charts {
@@ -53,6 +71,7 @@ html{
     align-items: center;
     font-weight: 600;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 .status-dot {
