@@ -68,3 +68,30 @@
 #left {
     background-color: var(--primary-color);
 }
+
+@media (max-width: 768px) {
+    #banner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #right {
+        height: 60vh;
+        width: 100%;
+        justify-content: center;
+    }
+
+    #left {
+        height: 40vh;
+        width: 100%;
+    }
+
+    #buttons {
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    #right a {
+        width: 7.5rem;
+    }
+}
