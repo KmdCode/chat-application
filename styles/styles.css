@@ -1,0 +1,70 @@
+ 
+ html{
+    --primary-color:#33678A;
+    --secondary-color:#78A6C9;
+    --trim-color: #E65C4F;
+    --heading-color: #EAEFF3;
+ }
+ 
+ body{
+    margin: 0;
+    padding: 0;
+    font-family:  "Mulish", sans-serif;
+    
+}
+
+#banner{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100vh;
+
+}
+
+#right {
+    background-color: var(--secondary-color);
+    align-content: center; 
+}
+
+#right h1 {
+    margin-left: 5rem;
+    color: var(--heading-color);
+    
+}
+
+#right span {
+    color:black
+}
+
+#right #buttons{
+    margin-left: 5rem;
+    gap: 2rem;
+    display: flex;
+}
+
+#right a {
+    display: inline-block;
+    text-align: center;
+    line-height: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    width:10rem;
+    height: 2rem; 
+    border-radius: 0.2rem;
+    padding: 0;
+    text-decoration: none;
+    color: black;
+}
+
+#right #login {
+    background-color: var(--trim-color);
+    margin-right: 2rem;
+}
+
+#right #signup {
+    background-color: var(--heading-color);
+    border-radius: 0.2rem;
+}
+
+#left {
+    background-color: var(--primary-color);
+}
