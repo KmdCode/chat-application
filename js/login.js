@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     user.online = true;
 
-    localStorage.setItem('currentUser', JSON.stringify(user));
+    sessionStorage.setItem('currentUser', JSON.stringify(user));
 
     // Update full user list with online status
     const updatedUsers = appData.users.map(u => u.id === user.id ? user : u);
