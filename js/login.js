@@ -1,3 +1,11 @@
+function decryptPassword(encrypted) {
+  let decrypted = '';
+  for (let i = 0; i < encrypted.length; i++) {
+    decrypted += String.fromCharCode(encrypted.charCodeAt(i) - 3);
+  }
+  return decrypted;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('login-form');
 
@@ -13,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
       user.email === email || user.username.toLowerCase() === email.toLowerCase()
     );
 
-    if (!user || user.password !== password) {
+    if (!user || decryptPassword(user.password)!== password) {
       alert('Invalid email or username or password');
       return;
     }
