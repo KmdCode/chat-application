@@ -36,30 +36,44 @@ document.addEventListener('DOMContentLoaded', () => {
     contactDiv.addEventListener('click', () => loadChat(user.username));
   });
 
-  function loadChat(withUsername) {
+    function loadChat(withUsername) {
+    const freshAppData = JSON.parse(localStorage.getItem('friendsConnect')) || { users: [] };
+    const freshCurrentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+
+    const chatHeader = document.getElementById('chat-header');
+    const chatMessages = document.getElementById('chat-messages');
+    const chatInput = document.querySelector('#chat-input input');
+
     chatHeader.innerHTML = `<span>${withUsername}</span>`;
     chatMessages.innerHTML = '';
     chatInput.dataset.with = withUsername;
 
-    const privateChat = currentUser.chats?.private?.find(chat => chat.with === withUsername);
+    const user = freshAppData.users.find(u => u.username === freshCurrentUser.username);
+    const privateChat = user?.chats?.private?.find(chat => chat.with === withUsername);
     if (!privateChat) return;
 
-    privateChat.messages.forEach(msg => {
-      const messageDiv = document.createElement('div');
-      messageDiv.classList.add('message', msg.sender === currentUser.username ? 'sent' : 'received');
+    privateChat.messages
+        .sort((a, b) => a.timestamp - b.timestamp)
+        .forEach(msg => {
+        const messageDiv = document.createElement('div');
+        messageDiv.classList.add('message', msg.sender === user.username ? 'sent' : 'received');
 
-      const p = document.createElement('p');
-      p.textContent = msg.content;
+        const p = document.createElement('p');
+        p.textContent = msg.content;
 
-      const timeSpan = document.createElement('span');
-      timeSpan.classList.add('timestamp');
-      timeSpan.textContent = msg.time;
+        const timeSpan = document.createElement('span');
+        timeSpan.classList.add('timestamp');
+        timeSpan.textContent = msg.time;
 
-      messageDiv.appendChild(p);
-      messageDiv.appendChild(timeSpan);
-      chatMessages.appendChild(messageDiv);
-    });
-  }
+        messageDiv.appendChild(p);
+        messageDiv.appendChild(timeSpan);
+        chatMessages.appendChild(messageDiv);
+        });
 
-  window.loadChat = loadChat;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+
+    window.loadChat = loadChat;
+
+
 });
