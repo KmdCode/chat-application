@@ -1,0 +1,28 @@
+.profile-container {
+      background-color: var(--primary-color);
+      color: var(--heading-color);
+      padding: 2rem;
+      font-family: "Mulish", sans-serif;
+      height: 100vh;
+      
+    }
+
+    .profile-box {
+      background-color: white;
+      color: black;
+      border-radius: 0.8rem;
+      padding: 2rem;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .profile-box h2 {
+      color: var(--trim-color);
+      margin-bottom: 1rem;
+    }
+
+    .profile-box p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
