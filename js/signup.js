@@ -1,3 +1,12 @@
+function encryptPassword(password) {
+  let encrypted = '';
+  for (let i = 0; i < password.length; i++) {
+    encrypted += String.fromCharCode(password.charCodeAt(i) + 3);
+  }
+  return encrypted;
+}
+
+
 document.getElementById('signup-form').addEventListener('submit', function (e) {
   e.preventDefault();
 
@@ -51,7 +60,7 @@ document.getElementById('signup-form').addEventListener('submit', function (e) {
     id: newId,
     username,
     email,
-    password,
+    password: encryptPassword(password),
     online: true,
     chats: {
       private: [],

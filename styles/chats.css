@@ -94,6 +94,10 @@ html{
     margin-bottom: 0;
 }
 
+#instruction {
+    font-size: 1rem;
+}
+
 #chat-messages {
     padding: 1.5rem;
     display: flex;
