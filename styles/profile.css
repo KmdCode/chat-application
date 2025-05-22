@@ -65,9 +65,8 @@ body, html {
   border-radius: 0.4rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 #save-btn:hover {
-  background-color: #0056b3;
+  background-color: var(--primary-color);
 }
