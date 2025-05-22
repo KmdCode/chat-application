@@ -1,28 +1,73 @@
+:root {
+  --primary-color: #33678A;
+  --heading-color: #ffffff;
+  --trim-color:  #E65C4F;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--primary-color);
+  font-family: "Mulish", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .profile-container {
-      background-color: var(--primary-color);
-      color: var(--heading-color);
-      padding: 2rem;
-      font-family: "Mulish", sans-serif;
-      height: 100vh;
-      
-    }
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-    .profile-box {
-      background-color: white;
-      color: black;
-      border-radius: 0.8rem;
-      padding: 2rem;
-      max-width: 400px;
-      margin: auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
+.profile-box {
+  background-color: white;
+  color: black;
+  border-radius: 0.8rem;
+  padding: 2rem;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
-    .profile-box h2 {
-      color: var(--trim-color);
-      margin-bottom: 1rem;
-    }
+.profile-box h2 {
+  color: var(--trim-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
 
-    .profile-box p {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
-    }
+.profile-box label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.profile-box input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+#save-btn {
+  background-color: var(--trim-color);
+  color: white;
+  padding: 0.7rem;
+  margin-top: 1.5rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#save-btn:hover {
+  background-color: #0056b3;
+}
