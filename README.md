@@ -15,10 +15,10 @@ A simple web-based chat application built with vanilla JavaScript, HTML, and CSS
 
 ## 📁 Wireframes
 
-Landing: https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-id=0-1&t=0o23IbRD7JDOyDXg-1
-Login:   https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-id=78-82&t=0o23IbRD7JDOyDXg-1
-Signup:  https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-id=2-161&t=0o23IbRD7JDOyDXg-1
-Chats: https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-id=2-289&t=0o23IbRD7JDOyDXg-1
+- Landing:https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-id=0-1&t=0o23IbRD7JDOyDXg-1
+- Login:https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-id=78-82&t=0o23IbRD7JDOyDXg-1
+- Signup:https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-id=2-161&t=0o23IbRD7JDOyDXg-1
+- Chats:https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-id=2-289&t=0o23IbRD7JDOyDXg-1
 
 ```
 📦 FriendsConnect
@@ -45,7 +45,7 @@ Chats: https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-i
   "version": "1.0",
   "users": [
     {
-      "id": "user123",
+      "id": "1",
       "username": "john_doe",
       "email": "john@example.com",
       "password": "hashedPassword",
@@ -53,11 +53,11 @@ Chats: https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-i
       "chats": {
         "private": [
           {
-            "with": "user456",
+            "with": "Modise",
             "online": false,
             "messages": [
               {
-                "sender": "john_doe",
+                "sender": "Karabo",
                 "text": "Hey!",
                 "timestamp": "2024-05-21T10:00:00Z"
               }
@@ -67,10 +67,10 @@ Chats: https://www.figma.com/design/9JgWlojYuTVexMKLWmtFP7/friendsconnect?node-i
         "group": [
           {
             "name": "Friends Group",
-            "participants": ["john_doe", "jane_doe"],
+            "participants": ["Stones", "Smith"],
             "messages": [
               {
-                "sender": "jane_doe",
+                "sender": "Dias",
                 "text": "Hello everyone!",
                 "timestamp": "2024-05-21T09:30:00Z"
               }
