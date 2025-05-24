@@ -12,11 +12,43 @@ html{
     
 }
 
+.tab-bar {
+    display: flex;
+    gap: 1rem;
+    margin: 1.2rem 1.5rem 0 1.5rem;
+}
+
+.navigation {
+    position: sticky;
+    z-index: 100;
+    background-color: #3f5a6f;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(252, 254, 253, 0.1);
+}
+
+.navigation h1 {
+    color: var(--heading-color);
+}
+
+.tab {
+    flex: 1;
+    background-color: var(--trim-color);
+    color: var(--heading-color);
+    border: 2px solid var(--trim-color);
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-family: "Mulish", sans-serif;
+}
+
 #banner{
     display: grid;
     grid-template-columns: 35% 65%;
-    grid-template-rows: 100vh;
-
+    /* grid-template-rows: 100vh; */
 }
 
 #right{
@@ -32,25 +64,6 @@ html{
 #left h1, #left h2 {
     color: var(--heading-color);
     margin-left: 1.5rem;
-}
-
-.tab-bar {
-    display: flex;
-    gap: 1rem;
-    margin: 1.2rem 1.5rem 0 1.5rem;
-}
-
-.tab {
-    flex: 1;
-    background-color: var(--trim-color);
-    color: var(--heading-color);
-    border: 2px solid var(--trim-color);
-    padding: 0.6rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-family: "Mulish", sans-serif;
 }
 
 #charts {
@@ -103,7 +116,7 @@ html{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    height: calc(100vh - 12rem);
+    height: calc(100vh - 20rem);
     overflow-y: auto;
 }
 
