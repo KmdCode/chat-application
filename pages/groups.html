@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="../styles/group-chat.css" rel="stylesheet"/>
     <link href="../styles/chats.css" rel="stylesheet" />
+    <link href="../styles/groups.css" rel="stylesheet"/>
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"/>
-    <title>Room Chat</title>
+    <title>Groups</title>
 </head>
 <body>
     <header class="navigation">
@@ -24,17 +25,21 @@
     <div id="banner">
         <div id="left">
             <h2>Groups</h2>
-            <div id="charts" id="user-list"> 
+            <button id="create-group">Create group</button>
+            <div id="groups">
+                <div id="group">Group name</div>
+                <div id="group">Group name</div>
+                <div id="group">Group name</div>
+                <div id="group">Group name</div>
             </div>
         </div>
 
         <div id="right">
             <div id="chat-header" class="contact">
-                <span>Global Room</span>
+                <span>Click Group To Connect</span>
             </div>
 
-            <div id="chat-messages">
-               
+            <div id="chat-messages">  
             </div>
 
             <div id="chat-input">
@@ -45,6 +50,5 @@
     </div>
 
     <script src="../js/logout.js"></script>
-    <script src="../js/group-chat.js"></script>
 </body>
 </html>
