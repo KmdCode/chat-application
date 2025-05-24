@@ -4,22 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="../styles/group-chat.css" rel="stylesheet"/>
+    <link href="../styles/chats.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"/>
     <title>Room Chat</title>
 </head>
 <body>
-    <div id="banner">
-        <div id="left">
-            <h1>FriendsConnect</h1>
+    <header class="navigation">
+        <h1>FriendsConnect</h1>
             <div class="tab-bar">
-                <button class="tab" onClick="window.location.href='chats.html'">Chats</button>
-                <button class="tab active">Room</button>
+                <button class="tab active" onClick="window.location.href='chats.html'">Chats</button>
+                <button class="tab" onClick="window.location.href='group-chat.html'">Groups</button>
                 <button class="tab" onclick="window.location.href='profile.html'">Profile</button>
                 <button class="tab" onClick="logout()">Logout</button>
+                <h2>karabo</h2>
             </div>
-            <h2>Users</h2>
+    </header>
+    <div id="banner">
+        <div id="left">
+            <h2>Groups</h2>
             <div id="charts" id="user-list"> 
             </div>
         </div>

@@ -1,22 +1,14 @@
-:root {
-  --primary-color: #33678A;
-  --heading-color: #ffffff;
-  --trim-color:  #E65C4F;
+
+body{
+  background-color: var(--primary-color);
 }
 
-body, html {
-  margin: 0;
+.profile-container {
+  margin: 1.5rem 0;
   padding: 0;
   height: 100%;
   background-color: var(--primary-color);
   font-family: "Mulish", sans-serif;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profile-container {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
