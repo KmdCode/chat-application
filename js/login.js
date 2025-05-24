@@ -1,4 +1,4 @@
-function decryptPassword(encrypted) {
+const decryptPassword = (encrypted) => {
   let decrypted = '';
   for (let i = 0; i < encrypted.length; i++) {
     decrypted += String.fromCharCode(encrypted.charCodeAt(i) - 3);
@@ -6,10 +6,10 @@ function decryptPassword(encrypted) {
   return decrypted;
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('login-form');
 
-  form.addEventListener('submit', function (e) {
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const email = document.getElementById('email').value;
@@ -38,3 +38,4 @@ document.addEventListener('DOMContentLoaded', function () {
     window.location.href = 'chats.html';
   });
 });
+

@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     contactDiv.addEventListener('click', () => loadChat(user.username));
   });
 
-    function loadChat(withUsername) {
+    const loadChat = (withUsername) => {
     const freshAppData = JSON.parse(localStorage.getItem('friendsConnect')) || { users: [] };
     const freshCurrentUser = JSON.parse(sessionStorage.getItem('currentUser'));
 

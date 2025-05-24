@@ -1,4 +1,4 @@
-function logout() {
+const logout = () => {
     const appData = JSON.parse(localStorage.getItem("friendsConnect")) || { users: [] };
     const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 

@@ -1,4 +1,4 @@
-function encryptPassword(password) {
+const encryptPassword = (password) => {
   let encrypted = '';
   for (let i = 0; i < password.length; i++) {
     encrypted += String.fromCharCode(password.charCodeAt(i) + 3);
@@ -7,7 +7,7 @@ function encryptPassword(password) {
 }
 
 
-document.getElementById('signup-form').addEventListener('submit', function (e) {
+document.getElementById('signup-form').addEventListener('submit', (e) => {
   e.preventDefault();
 
   const email = document.getElementById('email').value.trim();

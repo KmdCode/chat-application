@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const chatInput = document.querySelector('#chat-input input');
   const sendBtn = document.getElementById('send-btn');
 
-  function sendMessage() {
+  const sendMessage = () => {
     const message = chatInput.value.trim();
     const receiverUsername = chatInput.dataset.with;
 
