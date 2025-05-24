@@ -19,25 +19,8 @@ document.getElementById('signup-form').addEventListener('submit', (e) => {
   if (!appData) {
     appData = {
       users: [],
-      groupChat: {
-        name: "Global Room",
-        participants: [],
-        messages: []
-      }
+      groupChats: []
     };
-  }
-
-  // Ensure groupChat structure is complete
-  if (!appData.groupChat) {
-    appData.groupChat = {
-      name: "Global Room",
-      participants: [],
-      messages: []
-    };
-  } else {
-    appData.groupChat.name = appData.groupChat.name || "Global Room";
-    appData.groupChat.messages = appData.groupChat.messages || [];
-    appData.groupChat.participants = appData.groupChat.participants || [];
   }
 
   const userExists = appData.users.some(
@@ -64,22 +47,10 @@ document.getElementById('signup-form').addEventListener('submit', (e) => {
     online: true,
     chats: {
       private: [],
-      group: []
     }
   };
 
-  // Add user to users list
   appData.users.push(newUser);
-
-  if (!appData.groupChat.participants.includes(newId)) {
-    appData.groupChat.participants.push(newId);
-  }
-
-  //Pull latest messages to avoid overwriting them
-  const latestData = JSON.parse(localStorage.getItem('friendsConnect'));
-  if (latestData && latestData.groupChat && latestData.groupChat.messages) {
-    appData.groupChat.messages = latestData.groupChat.messages;
-  }
 
   localStorage.setItem('friendsConnect', JSON.stringify(appData));
 
