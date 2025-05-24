@@ -28,5 +28,5 @@ document.getElementById("save-btn").addEventListener("click", () => {
   sessionStorage.setItem("currentUser", JSON.stringify(user));
 
   alert("Profile updated successfully!");
-  window.location.href = "group-chat.html";
+  window.location.href = "chats.html";
 });
