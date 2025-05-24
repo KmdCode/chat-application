@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Group</title>
+  <link href="../styles/chats.css" rel="stylesheet" />
+  <link href="../styles/create-group.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet"/>
+</head>
+
+<body>
+  <header class="navigation">
+        <h1>FriendsConnect</h1>
+            <div class="tab-bar">
+                <button class="tab active" onClick="window.location.href='chats.html'">Chats</button>
+                <button class="tab" onClick="window.location.href='groups.html'">Groups</button>
+                <button class="tab" onclick="window.location.href='profile.html'">Profile</button>
+                <button class="tab" onClick="logout()">Logout</button>
+                <h2>karabo</h2>
+            </div>
+    </header>
+
+  <div class="form-container">
+    <div class="form-box">
+        <h2>Group Details</h2>
+        <form id="create-group-form">
+            <input id="group-name" type="text" placeholder="group name">
+            <p>Select Group members</p>
+            <input type="checkbox" name="members" value="Dias">
+            <label for="Dias">Dias</label>
+            <br>
+            <input type="checkbox" name="members" value="Manu">
+            <label for="Manu">Manu</label>
+            <br>
+            <input type="checkbox" name="members" value="Cancelo">
+            <label for="Cancelo">Cancelo</label>
+            <br>
+            <button id="save-btn" type="submit">Submit</button>
+            <button id="cancel-btn" type="submit">Cancel</button>
+        </form>
+    </div>
+  </div>
+
+
+  <script src="../js/profile.js"></script>
+</body>
+</html>
