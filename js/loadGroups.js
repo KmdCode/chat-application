@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+const loadUserGroups = () => {
     const appData = JSON.parse(localStorage.getItem('friendsConnect')) || { users: [], groupChats: [] };
     const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
     const groupContainer = document.getElementById('groups');
@@ -26,13 +26,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
       groupContainer.appendChild(groupDiv);
     });
-  });
+  };
 
 const loadGroupChat = (groupName) => {
     const appData = JSON.parse(localStorage.getItem('friendsConnect') || {user : [], groupChats: []});
     const group = appData.groupChats.find(group => group.name === groupName);
     const chatHeader = document.getElementById('chat-header');
     const chatMessages = document.getElementById('chat-messages');
+
+    if(!group) return;
 
     chatHeader.innerHTML = `<span>${group.name}</span>`;
     chatMessages.innerHTML = '';
@@ -48,10 +50,8 @@ const loadGroupChat = (groupName) => {
     sessionStorage.setItem('activeGroup', groupName);
 }
 
-const sendButton = document.getElementById('send-btn');
-const input = document.getElementById('message-input');
-
 const sendGroupMessage = () => {
+    const input = document.getElementById('message-input');
     const text = input.value.trim();
 
     if(!text) return;
@@ -76,11 +76,20 @@ const sendGroupMessage = () => {
 
     input.value = '';
     loadGroupChat(groupName);
+    loadUserGroups();
 }
 
-sendButton.addEventListener('click', sendGroupMessage)
-input.addEventListener('keypress', event => {
-    if (event.key === 'Enter') sendGroupMessage();
+window.addEventListener('DOMContentLoaded', () =>{
+  loadUserGroups();
+
+  const sendButton = document.getElementById('send-btn');
+  const input = document.getElementById('message-input');
+
+  sendButton.addEventListener('click', sendGroupMessage)
+  input.addEventListener('keypress', event =>{
+    if(event.key === 'Enter')sendGroupMessage();
+  })
+
 })
 
 window.addEventListener('storage', (event) => {
@@ -94,5 +103,6 @@ window.addEventListener('storage', (event) => {
         loadGroupChat(activeGroupName);
       }
     }
+    loadUserGroups();
   }
 });

@@ -12,31 +12,31 @@ document.addEventListener('DOMContentLoaded', () => {
   window.currentUser = currentUser;
 
   const contactsContainer = document.getElementById('charts');
-  const chatHeader = document.getElementById('chat-header');
-  const chatMessages = document.getElementById('chat-messages');
-  const chatInput = document.querySelector('#chat-input input');
 
-  const otherUsers = appData.users.filter(user => user.username !== currentUser.username);
+  const loadContacts = () => {
+    contactsContainer.innerHTML = '';
+    const otherUsers = window.appData.users.filter(user => user.username !== window.currentUser.username);
 
-  otherUsers.forEach(user => {
-    const contactDiv = document.createElement('div');
-    contactDiv.classList.add('contact');
-    contactDiv.dataset.username = user.username;
+    otherUsers.forEach(user => {
+      const contactDiv = document.createElement('div');
+      contactDiv.classList.add('contact');
+      contactDiv.dataset.username = user.username;
 
-    const nameSpan = document.createElement('span');
-    nameSpan.textContent = user.username;
+      const nameSpan = document.createElement('span');
+      nameSpan.textContent = user.username;
 
-    const statusDot = document.createElement('span');
-    statusDot.classList.add('status-dot', user.online ? 'status-online' : 'status-offline');
+      const statusDot = document.createElement('span');
+      statusDot.classList.add('status-dot', user.online ? 'status-online' : 'status-offline');
 
-    contactDiv.appendChild(nameSpan);
-    contactDiv.appendChild(statusDot);
-    contactsContainer.appendChild(contactDiv);
+      contactDiv.appendChild(nameSpan);
+      contactDiv.appendChild(statusDot);
+      contactsContainer.appendChild(contactDiv);
 
-    contactDiv.addEventListener('click', () => loadChat(user.username));
-  });
+      contactDiv.addEventListener('click', () => loadChat(user.username));
+    });
+}
 
-    const loadChat = (withUsername) => {
+  const loadChat = (withUsername) => {
     const freshAppData = JSON.parse(localStorage.getItem('friendsConnect')) || { users: [] };
     const freshCurrentUser = JSON.parse(sessionStorage.getItem('currentUser'));
 
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.loadChat = loadChat;
+    loadContacts();
 
     window.addEventListener('storage', (event) => {
     if (event.key === 'friendsConnect') {
@@ -86,6 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.currentUser = newCurrentUser;
         window.appData = updatedAppData;
 
+      loadContacts();
+
         // Check if a chat is open and reload it
         const receiverUsername = document.querySelector('#chat-input input')?.dataset.with;
         if (receiverUsername) {
@@ -93,5 +96,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     });
-
 });
