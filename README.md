@@ -4,6 +4,14 @@ A simple web-based chat application built with vanilla JavaScript, HTML, and CSS
 
  Project Link: https://kmdcode.github.io/chat-application/
 
+## Instructions to run project
+ 1. Clone or Download the Project
+ 2. Open the project folder in Visual Studio Code.
+ 3. Install the Live Server extension.
+ 4. Right-click login.html → Open with Live Server.
+ 5. Your browser will open: http://127.0.0.1:5500
+
+
 ## 🚀 Features
 
 - 🔐 User authentication (Signup/Login)
@@ -42,12 +50,11 @@ A simple web-based chat application built with vanilla JavaScript, HTML, and CSS
 
 ```json
 {
-  "version": "1.0",
   "users": [
     {
       "id": "1",
-      "username": "john_doe",
-      "email": "john@example.com",
+      "username": "Karabo",
+      "email": "test@email.com",
       "password": "hashedPassword",
       "online": true,
       "chats": {
@@ -64,17 +71,6 @@ A simple web-based chat application built with vanilla JavaScript, HTML, and CSS
             ]
           }
         ],
-        "group": [
-          {
-            "name": "Friends Group",
-            "participants": ["Stones", "Smith"],
-            "messages": [
-              {
-                "sender": "Dias",
-                "text": "Hello everyone!",
-                "timestamp": "2024-05-21T09:30:00Z"
-              }
-            ]
           }
         ]
       }
@@ -86,6 +82,6 @@ A simple web-based chat application built with vanilla JavaScript, HTML, and CSS
 ## 🛠 Tech Stack
 
 - HTML5
-- CSS3 (with Flexbox & Grid)
+- CSS3
 - Vanilla JavaScript
 - localStorage
