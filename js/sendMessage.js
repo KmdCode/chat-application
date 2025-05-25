@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   sendBtn.addEventListener('click', sendMessage);
-  chatInput.addEventListener('keypress', e => {
-    if (e.key === 'Enter') sendMessage();
+  chatInput.addEventListener('keypress', event => {
+    if (event.key === 'Enter') sendMessage();
   });
 });
